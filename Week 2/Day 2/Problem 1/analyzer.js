@@ -1,12 +1,18 @@
 const marks = [78, 85, 62, 90, 55];
 
-const total = marks.reduce((acc, mark) => acc + mark, 0);
+const button = document.getElementById("analyzeBtn");
+const resultDiv = document.getElementById("result");
 
-const average = total / marks.length;
+button.addEventListener("click", function () {
+    const total = marks.reduce((acc, mark) => acc + mark, 0);
+    const average = total / marks.length;
+    const result = average >= 60 ? "Pass" : "Fail";
 
-const result = average >= 60 ? "Pass" : "Fail";
+    resultDiv.innerHTML = `
+    <p>Marks: ${marks.join(", ")}</p>
+    <p>Total Marks: ${total}</p>
+    <p>Average Marks: ${average.toFixed(2)}</p>
+    <p>Result: ${result}</p>
+    `;
+});
 
-console.log(`Marks: ${marks.join(", ")}`);
-console.log(`Total Marks: ${total}`);
-console.log(`Average Marks: ${average.toFixed(2)}`);
-console.log(`Result: ${result}`);

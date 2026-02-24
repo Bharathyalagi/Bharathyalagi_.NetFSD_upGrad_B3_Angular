@@ -6,12 +6,22 @@ const products = [
     { name: "Keyboard", price: 1500, quantity: 1 }
 ];
 
-const total = calculateTotal(products);
+const button = document.getElementById("showCartBtn");
+const outputDiv = document.getElementById("output");
 
-const invoice = products.map(product => {
-    return `${product.name} - ${product.quantity} x ${product.price}`;
+button.addEventListener("click", function () {
+
+    const total = calculateTotal(products);
+
+    let invoiceHTML = "<h3>Invoice:</h3><ul>";
+
+    products.forEach(function(product) {
+        invoiceHTML += `<li>${product.name} - ${product.quantity} x ${product.price}</li>`;
+    });
+
+    invoiceHTML += "</ul>";
+
+    invoiceHTML += `<p><strong>Total Cart Value: ${total}</strong></p>`;
+
+    outputDiv.innerHTML = invoiceHTML;
 });
-
-console.log("Invoice:");
-invoice.forEach(item => console.log(item));
-console.log(`Total Cart Value: ${total}`);
