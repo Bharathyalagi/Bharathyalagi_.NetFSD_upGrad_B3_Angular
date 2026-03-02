@@ -1,0 +1,40 @@
+<!-- class work multiplication -->
+<html>
+
+</head>
+
+<body>
+	<h3>jQuery Programming - Event Handling in jQuery</h3>
+	<hr />
+	Product NAme:
+	<input type="text" id="t0" />
+	<br><br>
+    Unit price:
+	<input type="text" id="t1" />
+	<br><br>
+	Quantity :
+	<input type="text" id="t2" />
+	<br><br>
+	<input type="button" name="b1" id="b1" value="Get Total" />
+    <br><br>
+	<p id="p1"></p>
+
+
+
+    <script  src="https://code.jquery.com/jquery-4.0.0.js">		
+	</script>
+
+	<script>
+		$(document).ready(function () {
+
+			$("#b1").click(function()
+			{
+				let price  =  Number( $("#t1").val());
+				let qty  =  Number( $("#t2").val() );
+				let  total =  price * qty;
+				$("#p1").text("Total Amount : " + total);
+			});			 
+		});
+	</script>
+</body>
+</html>

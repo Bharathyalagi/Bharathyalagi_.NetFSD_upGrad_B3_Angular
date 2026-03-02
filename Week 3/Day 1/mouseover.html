@@ -1,0 +1,34 @@
+<html>
+
+<head><title>MouseOver Effect Tried</title></head>
+
+<body>
+	<h3>Web Programming - Mouse Event Handling </h3>
+	<hr />
+
+
+
+
+	<br /><br />
+	 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJvcmFuZ2UiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSI2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGR5PSIuM2VtIj5DYXJyb3Q8L3RleHQ+PC9zdmc+" class="c1" border="2" width="80" height="80"/>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJncmVlbiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZHk9Ii4zZW0iPkJyb2Njb2xpPC90ZXh0Pjwvc3ZnPg==" class="c1" border="2" width="80" height="80"/>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJyZWQiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSI2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGR5PSIuM2VtIj5Ub21hdG88L3RleHQ+PC9zdmc+" class="c1" border="2" width="80" height="80"/>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJwdXJwbGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSI2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGR5PSIuM2VtIj5FZ2dwbGFudDwvdGV4dD48L3N2Zz4=" class="c1" border="2" width="80" height="80"/>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJsaWdodGdyZWVuIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iNjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9ImJsYWNrIiBkeT0iLjNlbSI+Q3VjdW1iZXI8L3RleHQ+PC9zdmc+" class="c1" border="2" width="80" height="80"/>
+    <br/><br/>
+	<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iNDIwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJvcmFuZ2UiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSI2MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGR5PSIuM2VtIj5DYXJyb3Q8L3RleHQ+PC9zdmc+" id="bigImg" border="2" width="420" height="420" />
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$(".c1").mouseover(function () {
+				let str = $(this).attr("src");	// get the current small img src
+				$("#bigImg").attr("src", str);  // set to the big image
+			});
+		});
+	</script>
+</body>
+
+</html>
