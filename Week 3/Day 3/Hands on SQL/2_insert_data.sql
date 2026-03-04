@@ -34,3 +34,4 @@ INSERT INTO stocks (store_id, product_id, quantity) VALUES
 (2, 5, 15);
 
 TRUNCATE Table customers;
+SELECT * FROM stocks;

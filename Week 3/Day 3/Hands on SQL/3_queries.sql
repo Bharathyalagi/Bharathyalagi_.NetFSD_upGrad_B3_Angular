@@ -1,9 +1,12 @@
 -- 1st
-SELECT c.customer_id, c.first_name, c.last_name, COUNT(o.order_id) AS total_orders
+SELECT c.first_name, c.last_name, o.order_id, o.order_date, o.status
 FROM customers as c
-LEFT JOIN orders as o
+inner JOIN orders as o
 ON c.customer_id = o.customer_id
-GROUP BY c.customer_id, c.first_name, c.last_name;
+WHERE o.status = 'pending' 
+OR o.status = 'completed'
+ORDER BY o.order_date DESC;
+
 
 SELECT * FROM customers, 
 SELECT * from orders;
