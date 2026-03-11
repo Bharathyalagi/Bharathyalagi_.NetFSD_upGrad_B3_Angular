@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Classwork/Classwork.csproj" />
+  <Project Path="Handson/Handson1.csproj" />
+  <Project Path="Handson2/Handson2.csproj" Id="b27386ad-3780-4dc6-a587-d1e9e35068cc" />
+  <Project Path="Handson3/Handson3.csproj" Id="d2e5419e-5883-49ec-94a5-fdbb37a42b4a" />
+  <Project Path="Handson4/Handson4.csproj" Id="2370f349-8f6a-45dd-ae17-9ac83f65cac6" />
+</Solution>
