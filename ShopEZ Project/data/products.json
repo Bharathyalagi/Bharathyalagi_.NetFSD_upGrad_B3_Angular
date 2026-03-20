@@ -1,0 +1,44 @@
+[
+{
+"id":1,
+"name":"Laptop",
+"description":"High performance laptop designed for development, office work, and multitasking. Features 16GB RAM, 512GB SSD storage, and a powerful multi-core processor for fast performance. 15.6 inch Full HD display with anti-glare technology for comfortable viewing. Integrated graphics suitable for coding, presentations, and light design work. Includes Wi-Fi 6, Bluetooth connectivity, HD webcam, and long battery life up to 8 hours. Comes with 1 year manufacturer warranty and technical support.",
+"price":60000,
+"image":"images/laptop.png"
+},
+{
+"id":2,
+"name":"Smartphone",
+"description":"Latest generation smartphone with powerful processor and smooth user experience. Equipped with 8GB RAM and 128GB internal storage for fast app performance. 6.5 inch AMOLED display with vibrant colors and high resolution. Dual rear camera system for clear photos and videos along with AI image enhancement. Long lasting battery with fast charging support. Runs on the latest Android operating system with security updates. Includes 1 year warranty and standard manufacturer guarantee.",
+"price":25000,
+"image":"images/smartphone.jpg"
+},
+{
+"id":3,
+"name":"Headphones",
+"description":"Wireless over-ear headphones designed for immersive music and comfortable listening. Features active noise cancellation to reduce surrounding noise. High quality sound drivers deliver deep bass and clear audio. Bluetooth connectivity allows easy pairing with smartphones, laptops, and tablets. Soft ear cushions and adjustable headband provide comfort for long listening sessions. Battery backup up to 20 hours of playback. Comes with 1 year manufacturer warranty.",
+"price":8000,
+"image":"images/headphone.jpg"
+},
+{
+"id":4,
+"name":"Smart Watch",
+"description":"Modern smartwatch with advanced health and fitness tracking features. Monitors heart rate, daily steps, sleep patterns, and workout activities. Bright touchscreen display with customizable watch faces. Supports notifications for calls, messages, and mobile apps when connected to a smartphone. Water resistant design suitable for everyday use. Battery life up to 5 days on a single charge. Includes 1 year manufacturer warranty and replacement guarantee for manufacturing defects.",
+"price":12000,
+"image":"images/smartwatch.jpg"
+},
+{
+"id":5,
+"name":"Tablet",
+"description":"Portable tablet device designed for entertainment, reading, and productivity. Features 10 inch high resolution display ideal for watching videos, browsing the web, and online learning. Powered by efficient processor with 6GB RAM and 128GB storage for smooth performance. Lightweight design makes it easy to carry for travel and daily use. Supports Wi-Fi connectivity and long battery backup up to 10 hours. Includes 1 year manufacturer warranty and service support.",
+"price":18000,
+"image":"images/tablet.jpg"
+},
+{
+"id":6,
+"name":"Camera",
+"description":"Professional DSLR camera designed for photography enthusiasts and beginners who want high quality images. Equipped with high resolution image sensor for sharp photos and detailed videos. Interchangeable lens support allows different shooting styles including portrait and landscape photography. Fast autofocus system ensures clear shots even in motion. Large display screen for preview and menu navigation. Comes with standard lens kit, battery, charger, and 1 year manufacturer warranty.",
+"price":45000,
+"image":"images/camera.jpg"
+}
+]

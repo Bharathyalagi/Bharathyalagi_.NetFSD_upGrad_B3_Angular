@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Product Details</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">🛒 ShopEZ</a>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">
+              Cart (<span id="cartCount">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <a href="products.html" class="btn btn-secondary mb-3"
+        >← Back to Products</a
+      >
+
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <img id="productImage" class="img-fluid product-detail-img" />
+        </div>
+
+        <div class="col-md-6">
+          <h3 id="productName"></h3>
+          <p id="productDescription"></p>
+          <h4 id="productPrice"></h4>
+
+          <button class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container text-center">
+        <p>
+          ShopEZ is a simple e-commerce platform designed to showcase electronic
+          products with an easy shopping experience.
+        </p>
+        <p class="mb-0">© 2026 ShopEZ. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+      let params = new URLSearchParams(window.location.search);
+      let id = params.get("id");
+
+      $.getJSON("data/products.json", function (products) {
+        let product = products.find((p) => p.id == id);
+
+        $("#productImage").attr("src", product.image);
+        $("#productName").text(product.name);
+        $("#productDescription").text(product.description);
+        $("#productPrice").text("₹" + product.price);
+
+        $("#addToCartBtn").click(function () {
+          let cart = getCart();
+          cart.push(product);
+          saveCart(cart);
+          updateCartCount();
+
+          $("body").append(`
+<div class="alert alert-success position-fixed top-0 end-0 m-3">
+Item added to cart
+</div>
+`);
+
+          setTimeout(() => {
+            $(".alert").remove();
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
