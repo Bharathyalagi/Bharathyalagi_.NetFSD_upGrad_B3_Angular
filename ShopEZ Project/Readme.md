@@ -137,16 +137,6 @@ Home Page
 
 ---
 
-## Future Enhancements
-
-- Backend integration using ASP.NET
-- User authentication (Login/Register)
-- Payment gateway integration
-- Quantity update feature
-- Product filtering and search
-
----
-
 ## Conclusion
 
 This project demonstrates the implementation of a complete frontend e-commerce workflow including product display, cart management, and checkout simulation using client-side technologies.
