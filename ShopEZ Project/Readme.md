@@ -41,7 +41,8 @@ All data is handled on the client side using JSON and LocalStorage without any b
 
 ## Project Structure
 
-``` ShopEZ-Frontend
+```
+ShopEZ-Frontend
 │
 ├── index.html
 ├── products.html
