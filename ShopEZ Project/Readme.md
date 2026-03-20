@@ -2,6 +2,7 @@
 
 ## Author
 Bharath Yalagi
+Batch 3
 
 ---
 
@@ -41,7 +42,8 @@ All data is handled on the client side using JSON and LocalStorage without any b
 
 ## Project Structure
 
-``` ShopEZ-Frontend
+```
+ShopEZ-Frontend
 │
 ├── index.html
 ├── products.html
@@ -132,16 +134,6 @@ Home Page
 - Grid system for layout
 - Buttons and forms
 - Responsive design
-
----
-
-## Future Enhancements
-
-- Backend integration using ASP.NET
-- User authentication (Login/Register)
-- Payment gateway integration
-- Quantity update feature
-- Product filtering and search
 
 ---
 
