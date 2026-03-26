@@ -1,0 +1,28 @@
+﻿@model List<MVC.Models.Product>
+
+<h2>Product List</h2>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.ProductId</td>
+            <td>@p.ProductName</td>
+            <td>@p.Category</td>
+            <td>@p.Price</td>
+            <td>
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@p.ProductId">
+                    View
+                </a>
+            </td>
+        </tr>
+    }
+</table>

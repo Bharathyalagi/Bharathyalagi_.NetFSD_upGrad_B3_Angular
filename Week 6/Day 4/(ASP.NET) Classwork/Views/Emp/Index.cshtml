@@ -1,0 +1,25 @@
+﻿@model List<MVC.Models.Employee>
+
+<h1 class="display-5">Employee Controller - Index</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Employee Id</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Salary</th>
+        <th>Dept No</th>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Empno</td>
+            <td>@emp.Ename</td>
+            <td>@emp.Job</td>
+            <td>@emp.Salary</td>
+            <td>@emp.Deptno</td>
+        </tr>
+    }
+    
+</table>
