@@ -1,0 +1,13 @@
+﻿@model MVC.Models.Product
+
+<form asp-action="Edit" method="post">
+
+    <input asp-for="ProductId" readonly />
+
+    <input asp-for="ProductName" />
+    <input asp-for="Category" />
+    <input asp-for="Price" />
+
+    <button type="submit">Update</button>
+
+</form>

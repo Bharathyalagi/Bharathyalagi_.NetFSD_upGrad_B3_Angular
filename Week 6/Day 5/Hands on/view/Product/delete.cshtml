@@ -1,0 +1,10 @@
+﻿@model MVC.Models.Product
+
+<h2>Delete Product</h2>
+
+<p>@Model.ProductName</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.ProductId" />
+    <button type="submit">Delete</button>
+</form>
