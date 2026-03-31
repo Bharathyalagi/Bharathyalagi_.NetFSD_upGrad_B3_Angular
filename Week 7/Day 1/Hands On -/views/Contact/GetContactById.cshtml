@@ -1,0 +1,18 @@
+﻿@model MVC.Models.ContactInfo
+
+<h2>Contact Details</h2>
+
+@if (Model == null)
+{
+    <p>Contact not found</p>
+}
+else
+{
+    <p>@Model.ContactId</p>
+    <p>@Model.FirstName</p>
+    <p>@Model.LastName</p>
+    <p>@Model.CompanyName</p>
+    <p>@Model.EmailId</p>
+    <p>@Model.MobileNo</p>
+    <p>@Model.Designation</p>
+}
