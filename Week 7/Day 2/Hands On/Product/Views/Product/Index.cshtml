@@ -1,0 +1,23 @@
+﻿<form method="post">
+    <input name="name" placeholder="Product Name" />
+    <input name="price" placeholder="Price" />
+    <input name="qty" placeholder="Quantity" />
+    <button type="submit">Add</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+    </tr>
+
+    @foreach (var item in ViewBag.Products)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Qty</td>
+        </tr>
+    }
+</table>
