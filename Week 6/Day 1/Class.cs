@@ -27,7 +27,6 @@ namespace W6D1Asynchronous
             string response1 = await client.GetStringAsync("https://jsonplaceholder.typicode.com/posts");
             return response1;
         
-
         }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model List<WebApplication2.Models.Product>
+
+<h2>Products</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-2">Add Product</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Quantity</td>
+        </tr>
+    }
+</table>
