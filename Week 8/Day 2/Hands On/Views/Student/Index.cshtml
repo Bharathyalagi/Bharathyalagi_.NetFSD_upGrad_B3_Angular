@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebApplication8._2.Models.Student>
+
+<h2>Students with Course</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.StudentName</td>
+            <td>@s.CourseName</td>
+        </tr>
+    }
+</table>
