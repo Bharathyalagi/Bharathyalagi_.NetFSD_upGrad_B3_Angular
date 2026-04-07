@@ -1,0 +1,9 @@
+﻿@model Product
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <input asp-for="Name" />
+    <input asp-for="Price" />
+    <input asp-for="Category" />
+    <button type="submit">Update</button>
+</form>

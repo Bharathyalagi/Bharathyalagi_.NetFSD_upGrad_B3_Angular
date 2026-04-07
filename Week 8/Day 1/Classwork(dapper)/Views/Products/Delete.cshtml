@@ -1,0 +1,7 @@
+﻿@model Product
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <p>Delete @Model.Name?</p>
+    <button type="submit">Delete</button>
+</form>
