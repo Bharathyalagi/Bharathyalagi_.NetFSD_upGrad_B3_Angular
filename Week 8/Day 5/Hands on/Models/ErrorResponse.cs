@@ -1,6 +1,8 @@
-﻿namespace WebApplication8._3.Models
+﻿namespace ContactManagement.Models;
+
+public class ErrorResponse
 {
-    public class ErrorResponse
-    {
-    }
+    public string Message { get; set; }
+    public int StatusCode { get; set; }
+    public DateTime Timestamp { get; set; }
 }

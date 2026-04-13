@@ -1,75 +1,61 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication8._3.Models;
-using WebApplication8._3.DataAccess;
+using WebApplication8._5.Models;
+using WebApplication8._5.Repositories;
+using WebApplication8._5.Exceptions;
 
-namespace WebApplication8._3.Controllers
+namespace WebApplication8._5.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class ContactsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ContactsController : ControllerBase
+    private readonly IContactRepository _repo;
+    private readonly ILogger<ContactsController> _logger;
+
+    public ContactsController(IContactRepository repo, ILogger<ContactsController> logger)
     {
-        private readonly IContactRepository _repo;
+        _repo = repo;
+        _logger = logger;
+    }
 
-        public ContactsController(IContactRepository repo)
-        {
-            _repo = repo;
-        }
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        return Ok(await _repo.GetAllAsync());
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var data = await _repo.GetAllAsync();
-            return Ok(data);
-        }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(int id)
+    {
+        var data = await _repo.GetByIdAsync(id);
+        if (data == null)
+            throw new NotFoundException("Contact not found");
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            var contact = await _repo.GetByIdAsync(id);
+        return Ok(data);
+    }
 
-            if (contact == null)
-                return NotFound();
+    [HttpPost]
+    public async Task<IActionResult> Post(ContactInfo contact)
+    {
+        await _repo.AddAsync(contact);
+        _logger.LogInformation("Contact created");
+        return Ok(contact);
+    }
 
-            return Ok(contact);
-        }
+    [HttpPut]
+    public async Task<IActionResult> Put(ContactInfo contact)
+    {
+        await _repo.UpdateAsync(contact);
+        _logger.LogInformation("Contact updated");
+        return Ok(contact);
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(ContactInfo contact)
-        {
-            if (contact == null)
-                return BadRequest();
-
-            await _repo.AddAsync(contact);
-
-            return CreatedAtAction(nameof(GetById),
-                new { id = contact.ContactId },
-                contact);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, ContactInfo contact)
-        {
-            var existing = await _repo.GetByIdAsync(id);
-
-            if (existing == null)
-                return NotFound();
-
-            await _repo.UpdateAsync(id, contact);
-
-            return Ok(contact);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var existing = await _repo.GetByIdAsync(id);
-
-            if (existing == null)
-                return NotFound();
-
-            await _repo.DeleteAsync(id);
-
-            return Ok("Deleted successfully");
-        }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        await _repo.DeleteAsync(id);
+        _logger.LogInformation("Contact deleted");
+        return Ok();
     }
 }

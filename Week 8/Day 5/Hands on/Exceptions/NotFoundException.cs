@@ -1,6 +1,6 @@
-﻿namespace WebApplication8._3.Exceptions
+﻿namespace WebApplication8._5.Exceptions;
+
+public class NotFoundException : Exception
 {
-    public class NotFoundException
-    {
-    }
+    public NotFoundException(string message) : base(message) { }
 }

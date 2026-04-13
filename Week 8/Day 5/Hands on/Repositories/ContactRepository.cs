@@ -1,56 +1,53 @@
-﻿using WebApplication8._3.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication8._5.Data;
+using WebApplication8._5.Models;
 
-namespace WebApplication8._3.DataAccess
+namespace WebApplication8._5.Repositories;
+
+public class ContactRepository : IContactRepository
 {
-    public class ContactRepository : IContactRepository
+    private readonly AppDbContext _context;
+
+    public ContactRepository(AppDbContext context)
     {
-        public static List<ContactInfo> contacts = new List<ContactInfo>();
+        _context = context;
+    }
 
-        public async Task<IEnumerable<ContactInfo>> GetAllAsync()
+    public async Task<List<ContactInfo>> GetAllAsync()
+    {
+        return await _context.Contacts
+            .Include(c => c.Company)
+            .Include(c => c.Department)
+            .ToListAsync();
+    }
+
+    public async Task<ContactInfo> GetByIdAsync(int id)
+    {
+        return await _context.Contacts
+            .Include(c => c.Company)
+            .Include(c => c.Department)
+            .FirstOrDefaultAsync(c => c.ContactId == id);
+    }
+
+    public async Task AddAsync(ContactInfo contact)
+    {
+        await _context.Contacts.AddAsync(contact);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateAsync(ContactInfo contact)
+    {
+        _context.Contacts.Update(contact);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        var data = await _context.Contacts.FindAsync(id);
+        if (data != null)
         {
-            return await Task.FromResult(contacts);
-        }
-
-        public async Task<ContactInfo> GetByIdAsync(int id)
-        {
-            var contact = contacts.FirstOrDefault(c => c.ContactId == id);
-            return await Task.FromResult(contact);
-        }
-
-        public async Task AddAsync(ContactInfo contact)
-        {
-            contact.ContactId = contacts.Count + 1;
-            contacts.Add(contact);
-            await Task.CompletedTask;
-        }
-
-        public async Task UpdateAsync(int id, ContactInfo contact)
-        {
-            var existing = contacts.FirstOrDefault(c => c.ContactId == id);
-
-            if (existing != null)
-            {
-                existing.FirstName = contact.FirstName;
-                existing.LastName = contact.LastName;
-                existing.EmailId = contact.EmailId;
-                existing.MobileNo = contact.MobileNo;
-                existing.Designation = contact.Designation;
-                existing.CompanyId = contact.CompanyId;
-                existing.DepartmentId = contact.DepartmentId;
-            }
-
-            await Task.CompletedTask;
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            var contact = contacts.FirstOrDefault(c => c.ContactId == id);
-            if (contact != null)
-            {
-                contacts.Remove(contact);
-            }
-
-            await Task.CompletedTask;
+            _context.Contacts.Remove(data);
+            await _context.SaveChangesAsync();
         }
     }
 }

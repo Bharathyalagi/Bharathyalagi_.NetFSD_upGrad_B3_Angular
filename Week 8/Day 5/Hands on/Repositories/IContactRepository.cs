@@ -1,13 +1,12 @@
-﻿using WebApplication8._3.Models;
+﻿using WebApplication8._5.Models;
 
-namespace WebApplication8._3.DataAccess
+namespace WebApplication8._5.Repositories;
+
+public interface IContactRepository
 {
-    public interface IContactRepository
-    {
-        Task<IEnumerable<ContactInfo>> GetAllAsync();
-        Task<ContactInfo> GetByIdAsync(int id);
-        Task AddAsync(ContactInfo contact);
-        Task UpdateAsync(int id, ContactInfo contact);
-        Task DeleteAsync(int id);
-    }
+    Task<List<ContactInfo>> GetAllAsync();
+    Task<ContactInfo> GetByIdAsync(int id);
+    Task AddAsync(ContactInfo contact);
+    Task UpdateAsync(ContactInfo contact);
+    Task DeleteAsync(int id);
 }

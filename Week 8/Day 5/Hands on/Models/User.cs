@@ -1,6 +1,9 @@
-﻿namespace WebApplication8._3.Models
+﻿namespace WebApplication8._5.Models;
+
+public class User
 {
-    public class User
-    {
-    }
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public string Role { get; set; }
 }
