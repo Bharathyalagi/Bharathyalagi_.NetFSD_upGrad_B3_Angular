@@ -1,0 +1,23 @@
+class Person{
+    public name:string;
+    public age:number; 
+
+    constructor(name:string = "", age:number = 0)
+    {
+        this.name = name;
+        this.age = age;
+    }
+
+    showDetails():void
+    {
+        console.log(`[ Person Details ] Name : ${this.name}, Age : ${this.age}`);
+    }
+}
+
+let p1 = new Person();
+let p2 = new Person("Rahul");
+let p3 = new Person("Arjun", 27);
+
+p1.showDetails();
+p2.showDetails();
+p3.showDetails();
