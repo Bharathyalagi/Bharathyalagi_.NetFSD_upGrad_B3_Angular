@@ -1,0 +1,32 @@
+<h3>Product List</h3>
+
+<table border="2">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Price</th>
+  </tr>
+
+  @for (p of products; track p.id) {
+    <tr (click)="selectProduct(p)" style="cursor:pointer;">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.category}}</td>
+      <td>{{p.price}}</td>
+    </tr>
+  }
+</table>
+
+<hr/>
+
+@if(selectedProduct)
+{
+  <div style="border:1px solid gray; padding:10px;">
+    <h3>Selected Product</h3>
+    Id: {{selectedProduct.id}} <br/>
+    Name: {{selectedProduct.name}} <br/>
+    Category: {{selectedProduct.category}} <br/>
+    Price: {{selectedProduct.price}}
+  </div>
+}

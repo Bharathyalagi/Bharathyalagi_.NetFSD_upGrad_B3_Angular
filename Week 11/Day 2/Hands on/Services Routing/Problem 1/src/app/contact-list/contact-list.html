@@ -1,0 +1,54 @@
+<h3>Contact List</h3>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  @for (c of contacts; track c.id) {
+    <tr>
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.email}}</td>
+      <td>{{c.phone}}</td>
+      <td>
+        <button (click)="selectContact(c)">view</button>
+      </td>
+    </tr>
+  }
+</table>
+
+<hr/>
+
+<h3>Add Contact</h3>
+
+<label>Name:</label>
+<input type="text" [(ngModel)]="newName" />
+<br/><br/>
+
+<label>Email:</label>
+<input type="text" [(ngModel)]="newEmail" />
+<br/><br/>
+
+<label>Phone:</label>
+<input type="text" [(ngModel)]="newPhone" />
+<br/><br/>
+
+<button (click)="addContact()">Add Contact</button>
+
+<hr/>
+
+<h3>Contact Detail</h3>
+
+@if(!selectedContact) {
+  <p>Select a contact from table</p>
+}
+@else {
+  <p>Id: {{selectedContact.id}}</p>
+  <p>Name: {{selectedContact.name}}</p>
+  <p>Email: {{selectedContact.email}}</p>
+  <p>Phone: {{selectedContact.phone}}</p>
+}

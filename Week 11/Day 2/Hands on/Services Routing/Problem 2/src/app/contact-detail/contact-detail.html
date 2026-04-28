@@ -1,0 +1,11 @@
+<h2>Contact Detail</h2>
+
+@if(contact) {
+  <p>Id: {{contact.id}}</p>
+  <p>Name: {{contact.name}}</p>
+  <p>Email: {{contact.email}}</p>
+  <p>Phone: {{contact.phone}}</p>
+}
+@else {
+  <p>Contact not found</p>
+}

@@ -1,0 +1,13 @@
+@if(!productObj)
+{
+  <p>Product not found</p>
+}
+@else
+{
+  <div style="border:1px solid gray; padding:10px;">
+    Id: {{productObj?.id}} <br/>
+    Name: {{productObj?.name}} <br/>
+    Category: {{productObj?.category}} <br/>
+    Price: {{productObj?.price}}
+  </div>
+}

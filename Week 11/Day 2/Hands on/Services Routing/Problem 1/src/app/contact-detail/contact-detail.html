@@ -1,0 +1,11 @@
+<h3>Contact Detail</h3>
+
+@if(!contactObj) {
+  <p>No Data</p>
+}
+@else {
+  <p>Id: {{contactObj.id}}</p>
+  <p>Name: {{contactObj.name}}</p>
+  <p>Email: {{contactObj.email}}</p>
+  <p>Phone: {{contactObj.phone}}</p>
+}

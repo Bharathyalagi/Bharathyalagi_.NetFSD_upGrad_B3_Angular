@@ -1,0 +1,24 @@
+<h2>Contact List</h2>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  @for (c of contacts; track c.id) {
+    <tr>
+      <td>{{c.id}}</td>
+      <td>
+        <a [routerLink]="['/contact', c.id]">{{c.name}}</a>
+      </td>
+      <td>{{c.email}}</td>
+      <td>{{c.phone}}</td>
+    </tr>
+  }
+</table>
+
+<br/>
+<a routerLink="/add-contact">Add Contact</a>
