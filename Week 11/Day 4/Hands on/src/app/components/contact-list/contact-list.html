@@ -1,0 +1,9 @@
+<h2>Contacts</h2>
+
+<input [formControl]="search" placeholder="Search">
+
+<div *ngIf="contacts$ | async as contacts">
+  <div *ngFor="let c of contacts">
+    {{ c.name }} - {{ c.email }}
+  </div>
+</div>
