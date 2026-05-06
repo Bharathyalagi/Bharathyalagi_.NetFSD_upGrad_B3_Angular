@@ -1,0 +1,11 @@
+<h2>Orders</h2>
+
+<div *ngFor="let o of orders" class="order-card">
+  <p><b>Order ID:</b> {{o.orderId}}</p>
+  <p><b>Date:</b> {{o.orderDate}}</p>
+  <p><b>Total:</b> ₹ {{o.totalAmount}}</p>
+
+  <div *ngFor="let item of o.orderItems">
+    <span>Product ID: {{item.productId}} | Qty: {{item.quantity}}</span>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<h2>Your Cart</h2>
+
+<div *ngIf="orderPlaced" class="success-box">
+  <h3>Order Placed Successfully!</h3>
+  <br><br>
+  <button (click)="goBack()">Back to Cart</button>
+</div>
+
+<div *ngIf="!orderPlaced">
+
+  <div *ngIf="cart.length === 0">
+    <p>Cart is empty</p>
+  </div>
+
+  <div class="cart-item" *ngFor="let item of cart">
+    <img [src]="item.imageUrl">
+
+    <div>
+      <h4>{{item.name}}</h4>
+      <p>₹ {{item.price}}</p>
+
+      <div class="qty">
+        <button (click)="decrease(item.productId)">-</button>
+        <span>{{item.quantity}}</span>
+        <button (click)="increase(item.productId)">+</button>
+      </div>
+
+      <button (click)="remove(item.productId)">Remove</button>
+    </div>
+  </div>
+
+  <h3 *ngIf="cart.length > 0">Total: ₹ {{getTotal()}}</h3>
+
+  <button (click)="checkout()" [disabled]="cart.length === 0">
+    Checkout
+  </button>
+
+</div>

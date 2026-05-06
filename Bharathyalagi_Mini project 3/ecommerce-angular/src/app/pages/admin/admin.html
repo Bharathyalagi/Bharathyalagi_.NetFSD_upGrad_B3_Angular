@@ -1,0 +1,24 @@
+<div class="admin-wrapper">
+  <div class="admin-container">
+    <h2>Admin Panel</h2>
+
+    <div class="form-box">
+      <input [(ngModel)]="newProduct.name" placeholder="Name">
+      <input [(ngModel)]="newProduct.description" placeholder="Description">
+      <input [(ngModel)]="newProduct.price" type="number" placeholder="Price">
+      <input [(ngModel)]="newProduct.imageUrl" placeholder="Image">
+      <input [(ngModel)]="newProduct.stock" type="number" placeholder="Stock">
+
+      <button (click)="add()">Add Product</button>
+    </div>
+
+    <p class="msg" *ngIf="message">{{ message }}</p>
+
+    <div class="product-list">
+      <div class="product-card" *ngFor="let p of products">
+        <span>{{ p.name }} - ₹ {{ p.price }}</span>
+        <button class="delete" (click)="delete(p.productId)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
